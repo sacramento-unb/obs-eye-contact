@@ -1,0 +1,17 @@
+[project]
+name = "obs-eye-contact"
+version = "0.1.0"
+description = "Local CPU gaze redirection into a persistent V4L2 camera"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "ai-edge-litert==2.1.0",
+  "mediapipe==0.10.32",
+  "numpy==2.1.3",
+  "opencv-contrib-python==4.11.0.86",
+  "pyvirtualcam==0.14.0",
+]
+
+[tool.uv]
+package = false
+# LiteRT requires this backport unconditionally; 1.3.1 excludes Python >=3.11.
+constraint-dependencies = ["backports-strenum==1.2.8"]

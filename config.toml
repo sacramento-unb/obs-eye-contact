@@ -1,0 +1,16 @@
+source = "/dev/video0"
+sink = "/dev/video10"
+width = 1280
+height = 720
+fps = 30
+
+# Measure from your usual screen fixation point to the lens.
+# Positive vertical = camera above that point; positive horizontal = camera right.
+camera_above_cm = 25.0
+camera_right_cm = 0.0
+viewing_distance_cm = 60.0
+focal_length_px = 650.0
+# 0 = passthrough; 1 = full calibrated correction. WangWilly model domain: vertical +/-30°, horizontal +/-40°.
+strength = 1.0
+iris_correction_gain_deg = 200.0
+iris_smoothing = 0.25

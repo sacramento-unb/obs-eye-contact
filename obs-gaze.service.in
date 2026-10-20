@@ -1,0 +1,25 @@
+[Unit]
+Description=Local neural eye-contact camera for OBS
+PartOf=graphical-session.target
+After=graphical-session.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=notify
+WorkingDirectory=@PROJECT@
+ExecStart="@PROJECT@/.venv/bin/python" "@PROJECT@/gaze_camera.py" --config "%h/.config/obs-gaze/config.toml"
+ExecStartPost=/usr/bin/v4l2-ctl --device=/dev/video10 --set-ctrl=timeout=3000
+Restart=on-failure
+RestartSec=5
+WatchdogSec=20
+WatchdogSignal=SIGKILL
+TimeoutStartSec=60
+TimeoutStopSec=8
+Environment=PYTHONUNBUFFERED=1
+Environment=OMP_NUM_THREADS=2
+Environment=OPENBLAS_NUM_THREADS=2
+NoNewPrivileges=true
+UMask=0077
+
+[Install]
+WantedBy=graphical-session.target
