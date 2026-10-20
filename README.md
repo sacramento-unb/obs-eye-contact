@@ -111,3 +111,14 @@ Keep or remove `~/.config/obs-gaze/` separately according to whether you want to
 - [pyvirtualcam Linux output](https://github.com/letmaik/pyvirtualcam).
 
 Source download checksums and immutable model URLs are in `tools/prepare_models.py`; Python dependency versions and hashes are in `uv.lock`.
+
+## Project status and licensing
+
+This is an experimental, hardware-specific project. The repository contains one
+implementation commit and no release or tag. Reproducing the model-dependent
+tests requires running the documented conversion step first because generated
+models are intentionally not committed.
+
+`THIRD_PARTY_LICENSE.txt` preserves terms for the referenced model implementation;
+it is not a repository-level license for this project's own code. Confirm reuse
+and redistribution terms before publishing derivatives.
